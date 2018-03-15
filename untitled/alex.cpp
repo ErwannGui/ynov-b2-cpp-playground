@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 int main()
 {
@@ -56,4 +56,37 @@ int main()
         cout << "Resultat = " << resultat << endl;
         //On affiche le résultat
     }
+}
+*/
+#include<iostream>
+using namespace std;
+int mini(int a,int b)
+{
+    int min=(a<b)?a:b;
+    return min;
+}
+int pgcd(int a, int b)
+{
+    int pgcd=min(a,b);
+    while (pgcd>=1)
+    {
+        if(a%pgcd==0 && b%pgcd==0)
+            break;
+        pgcd--;
+    }
+    return pgcd;
+}
+int ppcm(int a, int b)
+{
+    int ppcm=(a*b)/pgcd(a,b);
+    return ppcm;
+}
+int main()
+{
+    int a, b;
+    cout<<"Entrez un premier nombre : ";
+    cin>>a;
+    cout<<"Entrez un second nombre : ";
+    cin>>b;
+    cout<<"ppcm="<<ppcm(a,b)<<endl<<"pgcd="<<pgcd(a,b)<<endl<<"min="<<mini(a,b);
 }
