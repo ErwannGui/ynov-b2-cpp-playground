@@ -201,11 +201,3 @@
     /* --- Fin de programme --- */
 
 /* ***** -- Fin partie -- ***** */
-
-/* ***** -- Partie Mickaël -- ***** */
-
-/* ***** -- Fin partie -- ***** */
-
-/* ***** -- Partie Alexandre -- ***** */
-
-/* ***** -- Fin partie -- ***** */
