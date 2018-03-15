@@ -214,93 +214,97 @@
 
     /* --- Fin de programme --- */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-/*#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>*/
-#include <winsock2.h>
-#include <ws2tcpip.h>
+    /* --- Programme de connexion distance via les sockets --- */
 
-// C'est cette fonction qui est a etudie. Je l'ai commente pour vous.
-int connect_s(char *addr, char *port, int *sock, struct addrinfo *info);
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <unistd.h>
+    #include <sys/types.h>
+    #include <sys/socket.h>
+    #include <netinet/in.h>
+    #include <arpa/inet.h>
+    #include <netdb.h>
+    #include <winsock2.h>
+    #include <ws2tcpip.h>
 
-int main(void)
-{
-    struct addrinfo info;            // L'equivalent de la structure sockaddr_in
+    // C'est cette fonction qui est a etudie. Je l'ai commente pour vous.
+    int connect_s(char *addr, char *port, int *sock, struct addrinfo *info);
 
-    info.ai_family        = AF_UNSPEC;    // On ne specifie pas la famille, on utilisera celle de l'hote
-    info.ai_socktype    = SOCK_STREAM;    // On utilisera le mode connecte
-    info.ai_protocol    = IPPROTO_IP;    // Et le protocole IP
-
-    char *port        = "2200";    // Le port de l'hote
-    char *addr        = "kvm.neo-se.fr";    // Et son adresse
-
-    int sock;                // Notre socket
-
-    connect_s(addr, port, &sock, &info);    // On decide de se connecte en passent l'adresse, le port, un pointeur sur notre
-    // socket et la structure sockaddrinfo
-
-    char msg[4096] = {'\0'};
-
-    while(strcmp(msg, "007") != 0)
+    int main(void)
     {
-        char *pos = NULL;
+        struct addrinfo info;            // L'equivalent de la structure sockaddr_in
 
-        printf("Message : ");
+        info.ai_family        = AF_UNSPEC;    // On ne specifie pas la famille, on utilisera celle de l'hote
+        info.ai_socktype    = SOCK_STREAM;    // On utilisera le mode connecte
+        info.ai_protocol    = IPPROTO_IP;    // Et le protocole IP
 
-        fgets(msg, 4096, stdin);
+        char *port        = "2200";    // Le port de l'hote
+        char *addr        = "kvm.neo-se.fr";    // Et son adresse
 
-        pos = strchr(msg, '\n');    // Ici je ne gere pas les erreurs
-        *pos = '\0';
+        int sock;                // Notre socket
 
-        write(sock, msg, sizeof(msg));    // Envoit notre message, ici non plus je ne gere pas les erreurs
-    }
+        connect_s(addr, port, &sock, &info);    // On decide de se connecte en passent l'adresse, le port, un pointeur sur notre
+        // socket et la structure sockaddrinfo
 
-    return EXIT_SUCCESS;
-}
+        char msg[4096] = {'\0'};
 
-int connect_s(char *addr, char *port, int *sock, struct addrinfo *info)
-{
-    struct addrinfo *resultat, *test;
-
-    int res = getaddrinfo(addr, port, info, &resultat);    // Prend les informations utiles sur notre hote et les stockent dans
-    // la structure resultat, on s'en servira pour nous connecte
-
-    if(res < 0)
-        return res; // Afficher l'erreur avec un printf("%s", gai_strerror(res));
-
-    test = resultat;
-
-    while(test != NULL)
-    {
-        // Pour creer la socket on utilise la famille, le type de socket et le protocol de notre hote.
-        // C'est grace a cela que l'on peut se connecter en IPV4 ou IPV6 a notre hote.
-        // Toutes ces informations son dans la structure resultat
-        if((*sock = socket(test->ai_family, test->ai_socktype, test->ai_protocol)) == -1)
+        while(strcmp(msg, "007") != 0)
         {
-            test->ai_next;    // Passe a l'alias suivant dans la liste car il y a erreur sur celui la
-            continue;    // Entame un nouveau tour de boucle
+            char *pos = NULL;
+
+            printf("Message : ");
+
+            fgets(msg, 4096, stdin);
+
+            pos = strchr(msg, '\n');    // Ici je ne gere pas les erreurs
+            *pos = '\0';
+
+            write(sock, msg, sizeof(msg));    // Envoit notre message, ici non plus je ne gere pas les erreurs
         }
 
-        if(connect(*sock, test->ai_addr, test->ai_addrlen) != -1)
-            break;        // Si la connexion est etablie, quitte la boucle
+        return EXIT_SUCCESS;
     }
 
-    if(test == NULL)        // Si la connexion n'a pas pus etre etablie
+    int connect_s(char *addr, char *port, int *sock, struct addrinfo *info)
     {
-        freeaddrinfo(resultat);
-        return -1;
+        struct addrinfo *resultat, *test;
+
+        int res = getaddrinfo(addr, port, info, &resultat);    // Prend les informations utiles sur notre hote et les stockent dans
+        // la structure resultat, on s'en servira pour nous connecte
+
+        if(res < 0)
+            return res; // Afficher l'erreur avec un printf("%s", gai_strerror(res));
+
+        test = resultat;
+
+        while(test != NULL)
+        {
+            // Pour creer la socket on utilise la famille, le type de socket et le protocol de notre hote.
+            // C'est grace a cela que l'on peut se connecter en IPV4 ou IPV6 a notre hote.
+            // Toutes ces informations son dans la structure resultat
+            if((*sock = socket(test->ai_family, test->ai_socktype, test->ai_protocol)) == -1)
+            {
+                test->ai_next;    // Passe a l'alias suivant dans la liste car il y a erreur sur celui la
+                continue;    // Entame un nouveau tour de boucle
+            }
+
+            if(connect(*sock, test->ai_addr, test->ai_addrlen) != -1)
+                break;        // Si la connexion est etablie, quitte la boucle
+        }
+
+        if(test == NULL)        // Si la connexion n'a pas pus etre etablie
+        {
+            freeaddrinfo(resultat);
+            return -1;
+        }
+
+        return 0;
     }
 
-    return 0;
-}
+    // Pour ce programme, la librairie sys/socket.h n'existant pas sous windows (seulement sous linux), j'ai tenté d'utiliser la librairie propre à windows
+    // J'ai plusieurs erreurs concernant des fonctions non reconnues alors qu'elles sont bien présentes dans la documentation officielle de Microsoft ...
 
-// Pour ce programme, la librairie sys/socket.h n'existant pas sous windows (seulement sous linux), j'ai tenté d'utiliser la librairie propre à windows
-// J'ai plusieurs erreurs concernant des fonctions non reconnues alors qu'elles sont bien présentes dans la documentation officielle de Microsoft ...
+    /* --- Fin de programme --- */
 
 /* ***** -- Fin partie -- ***** */
