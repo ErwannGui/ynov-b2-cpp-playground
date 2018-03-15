@@ -53,7 +53,7 @@
 
     /* --- Programme factorisation des nombres premiers non terminé --- */
 
-    #include <iostream>
+    /*#include <iostream>
     #include <vector>
     #include <cmath>
 
@@ -196,6 +196,20 @@
                 cout<<" x ";
 
         }while(counter<taille-1);
+    }*/
+
+    /* --- Fin de programme --- */
+
+    /* --- Programme de contrôle du moniteur --- */
+
+    #include <windows.h>
+
+    int main(int argc, char *argv[])// autre méthode de déclaration de la fonction main permettant de récupérer des arguments d'appel
+    {
+        SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, (LPARAM) 2); //donne l'instrution pour éteindre le moniteur
+        Sleep(50000); //faire un petit pause
+        SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, (LPARAM) -1); //donne l'instrution pour rallumer le moniteur
+        exit(0);
     }
 
     /* --- Fin de programme --- */
