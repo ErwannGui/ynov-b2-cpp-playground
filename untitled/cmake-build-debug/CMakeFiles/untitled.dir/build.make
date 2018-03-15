@@ -56,38 +56,38 @@ include CMakeFiles/untitled.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled.dir/flags.make
 
-CMakeFiles/untitled.dir/main.cpp.obj: CMakeFiles/untitled.dir/flags.make
-CMakeFiles/untitled.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\main.cpp.obj -c C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\main.cpp
+CMakeFiles/untitled.dir/erwann.cpp.obj: CMakeFiles/untitled.dir/flags.make
+CMakeFiles/untitled.dir/erwann.cpp.obj: ../erwann.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled.dir/erwann.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\untitled.dir\erwann.cpp.obj -c C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\erwann.cpp
 
-CMakeFiles/untitled.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\main.cpp > CMakeFiles\untitled.dir\main.cpp.i
+CMakeFiles/untitled.dir/erwann.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled.dir/erwann.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\erwann.cpp > CMakeFiles\untitled.dir\erwann.cpp.i
 
-CMakeFiles/untitled.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\main.cpp -o CMakeFiles\untitled.dir\main.cpp.s
+CMakeFiles/untitled.dir/erwann.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled.dir/erwann.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-W\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\erwann.cpp -o CMakeFiles\untitled.dir\erwann.cpp.s
 
-CMakeFiles/untitled.dir/main.cpp.obj.requires:
+CMakeFiles/untitled.dir/erwann.cpp.obj.requires:
 
-.PHONY : CMakeFiles/untitled.dir/main.cpp.obj.requires
+.PHONY : CMakeFiles/untitled.dir/erwann.cpp.obj.requires
 
-CMakeFiles/untitled.dir/main.cpp.obj.provides: CMakeFiles/untitled.dir/main.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/main.cpp.obj.provides.build
-.PHONY : CMakeFiles/untitled.dir/main.cpp.obj.provides
+CMakeFiles/untitled.dir/erwann.cpp.obj.provides: CMakeFiles/untitled.dir/erwann.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\untitled.dir\build.make CMakeFiles/untitled.dir/erwann.cpp.obj.provides.build
+.PHONY : CMakeFiles/untitled.dir/erwann.cpp.obj.provides
 
-CMakeFiles/untitled.dir/main.cpp.obj.provides.build: CMakeFiles/untitled.dir/main.cpp.obj
+CMakeFiles/untitled.dir/erwann.cpp.obj.provides.build: CMakeFiles/untitled.dir/erwann.cpp.obj
 
 
 # Object files for target untitled
 untitled_OBJECTS = \
-"CMakeFiles/untitled.dir/main.cpp.obj"
+"CMakeFiles/untitled.dir/erwann.cpp.obj"
 
 # External object files for target untitled
 untitled_EXTERNAL_OBJECTS =
 
-untitled.exe: CMakeFiles/untitled.dir/main.cpp.obj
+untitled.exe: CMakeFiles/untitled.dir/erwann.cpp.obj
 untitled.exe: CMakeFiles/untitled.dir/build.make
 untitled.exe: CMakeFiles/untitled.dir/linklibs.rsp
 untitled.exe: CMakeFiles/untitled.dir/objects1.rsp
@@ -100,7 +100,7 @@ CMakeFiles/untitled.dir/build: untitled.exe
 
 .PHONY : CMakeFiles/untitled.dir/build
 
-CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/main.cpp.obj.requires
+CMakeFiles/untitled.dir/requires: CMakeFiles/untitled.dir/erwann.cpp.obj.requires
 
 .PHONY : CMakeFiles/untitled.dir/requires
 

@@ -6,13 +6,31 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Erwann/Desktop/ynov-b2-cpp-playground/untitled/main.cpp
+C:/Users/Erwann/Desktop/ynov-b2-cpp-playground/untitled/erwann.cpp
 vector
--
-iostream
 -
 vector
 -
 cmath
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+netdb.h
+-
+winsock2.h
+-
+ws2tcpip.h
 -
 
