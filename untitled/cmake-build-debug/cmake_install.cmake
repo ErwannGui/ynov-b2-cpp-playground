@@ -1,4 +1,4 @@
-# Install script for directory: D:/C++/Projects-C/untitled
+# Install script for directory: C:/Users/Erwann/Desktop/ynov-b2-cpp-playground/untitled
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/C++/Projects-C/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Erwann/Desktop/ynov-b2-cpp-playground/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

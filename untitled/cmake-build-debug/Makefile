@@ -47,10 +47,10 @@ RM = C:\Users\Erwann\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\173.4674.29
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\C++\Projects-C\untitled
+CMAKE_SOURCE_DIR = C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\C++\Projects-C\untitled\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\C++\Projects-C\untitled\cmake-build-debug\CMakeFiles D:\C++\Projects-C\untitled\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\cmake-build-debug\CMakeFiles C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\C++\Projects-C\untitled\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Erwann\Desktop\ynov-b2-cpp-playground\untitled\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
